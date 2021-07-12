@@ -145,7 +145,7 @@ h3{
   @media only screen and (max-width: 688px) {
     .container{
         width: 100%;
-        padding: 10px;
+        
     }
     .top-players, .blogs, .courses{
         grid-template-columns: 1fr;
