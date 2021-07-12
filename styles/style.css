@@ -143,21 +143,23 @@ h3{
     
   }
   @media only screen and (max-width: 688px) {
-      .container{
-          width: 100%;
-      }
-      .top-players, .blogs, .courses{
-          grid-template-columns: 1fr;
+    .container{
+        width: 100%;
+        padding: 10px;
+    }
+    .top-players, .blogs, .courses{
+        grid-template-columns: 1fr;
+    }
+    .player , .blog , .course{
+      
+        flex-direction: column;
+        align-items: center;
+       
 
-      }
-      .course{
-          margin-bottom: 20px;
-      }
-      .player, .blog{
-          text-align: center;
-          justify-content: center;
-          flex-direction: column;
-          align-items: center;
-      }
+    }
+    .blog img{
+        margin-left: 16px;
+    }
+      
   }
   
