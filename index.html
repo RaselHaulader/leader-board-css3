@@ -32,7 +32,7 @@
         <!-- top player top blogs section start -->
         <section class="container">
             <div class="top-players-container">
-                <h2 class="container-title">Top players</h2>
+                <h2 id="header-player" class="container-title">Top players</h2>
                 <div class="top-players">
                     <div class="player">
                         <img src="images/players/player-1.png" alt="">
@@ -63,7 +63,7 @@
             </div>
             <hr>
            <div class="blogs-container">
-               <h2 class="container-title">Top blogs</h2>
+               <h2 id="header-blog" class="container-title">Top blogs</h2>
               <div class="blogs">
                 <article class="blog">
                    <img src="images/blogs/blog-1.png" alt="">
@@ -166,12 +166,77 @@
                         </div>
                     </div>
                 </article>
-                
             </div>
         </section>
-        
+        <section class="container">
+            <ul id="ul-list">
+                <li>list item </li>
+                <li>list item </li>
+                <li>list item </li>
+            </ul>
+            <button class="list-btn">Add list item</button>
+            <div style="margin: 10px 0;" >
+                <input value="0" id="count-input" type="text" readonly> <button onclick="increase()" class="count-btn">Increase</button>
+            </div>
+        </section>
          <!-- latest-courses start  -->
-         
     </main>
+    <script>
+        // header color
+        function changeHeader(id){
+            document.getElementById(id).style.color = 'salmon'
+        }
+        changeHeader('header-player')
+        changeHeader('header-blog');
+        // player  background
+      const players =  document.querySelectorAll('.player')
+      for (const player of players) {
+          player.style.backgroundColor = ' rgba(15, 78, 255, 0.555)'
+          player.style.margin = '5px';
+          player.style.padding = '10px';
+          player.style.borderRadius = '10px';
+      }
+      // ul list generate
+      document.querySelector('.list-btn').addEventListener('click', function(){
+          const ulList = document.querySelector('#ul-list')
+          const newList= `<li>list item</li> `;
+
+          ulList.innerHTML += newList;
+      })
+      //count
+      function increase() {
+          const countInput = document.getElementById('count-input')
+          const countValue = parseInt(countInput.value);
+          const newValue = countValue + 1
+          countInput.value = newValue
+          if (newValue==5) {
+             document.querySelector('.count-btn').setAttribute('disabled', true)
+          }
+      }
+      // find targeted named element and store in a new array
+      const booksName = ['books of js', 'books of php','js books' , 'best of js', 'best book']
+         const jsBooks = []
+      for (const book of booksName) {
+          if (book.includes('js')) {
+            jsBooks.push(book)
+              console.log(book)
+          }
+      }
+      console.log(jsBooks);
+      //sorting array ascending
+      const numberArr = [12,123,34,23,2,5,87,4,5,7,34,6,5,36,15,14,15]
+       numberArr.sort(function (a,b) {
+           return a-b
+       });
+       console.log(numberArr)
+      
+      //sorting array descending
+      const numberArr2 = [12,123,34,23,2,5,87,4,5,7,34,6,5,36,15,14,15]
+       numberArr2.sort(function (a,b) {
+           return b-a
+       });
+       console.log(numberArr2)
+      
+    </script>
 </body>
 </html>
